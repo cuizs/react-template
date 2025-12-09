@@ -22,10 +22,7 @@ export default defineConfig({
       resolvers: [
         AntdResolver({
           prefix: "Ant",
-        }),
-        (originName: string) => {
-          console.log("originName", originName);
-        },
+        })
       ],
     }),
   ],
