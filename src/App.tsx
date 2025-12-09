@@ -1,12 +1,16 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import * as Sentry from "@sentry/react"
+import type { FooParams } from "types";
+
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
+  const foo = (cart: FooParams) => {
+    if (cart.items && cart.items[0] && cart.items[0].quantity === 0)
+      setCount(0);
+  };
   return (
     <>
       <div>
@@ -30,15 +34,17 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <button
-      className='vertify'
-      onClick={() => {
-       a.t = 1
-      }}
-    >
-      Break the world
-    </button>
+        className="vertify"
+        onClick={() => {
+          foo({});
+        }}
+      >
+        Break the world
+      </button>
+      <AntButton>ceshi</AntButton>
+      <AntCheckbox>Checkbox</AntCheckbox>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
