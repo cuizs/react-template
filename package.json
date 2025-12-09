@@ -9,13 +9,14 @@
     "build": "tsc -b && vite build",
     "lint": "eslint . && prettier  ./src/ --check",
     "lint-staged": "lint-staged",
-    "prettier-write": "prettier ./src/ --write --ignore-unknown",
+    "lint-fix": "eslint --fiex && prettier ./src/ --write --ignore-unknown",
     "preview": "vite preview",
     "prepare": "husky"
   },
   "lint-staged": {
     "src/**/*.{ts,js,jsx,tsx}": [
-        "eslint --fix"
+        "eslint --fix",
+        "prettier --check"
     ]
   },
   "dependencies": {
