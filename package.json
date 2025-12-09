@@ -9,7 +9,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint . && prettier  ./src/ --check",
     "lint-staged": "lint-staged",
-    "lint-fix": "eslint --fiex && prettier ./src/ --write --ignore-unknown",
+    "lint-fix": "eslint --fix && prettier ./src/ --write --ignore-unknown",
     "preview": "vite preview",
     "prepare": "husky"
   },
