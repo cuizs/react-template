@@ -5,7 +5,7 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+   const [count, setCount] = useState(0);
 
   const foo = (cart: FooParams) => {
     if (cart.items && cart.items[0] && cart.items[0].quantity === 0)
