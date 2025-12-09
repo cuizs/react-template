@@ -1,6 +1,8 @@
 {
   "globals": {
     "Activity": true,
+    "AntButton": true,
+    "AntCheckbox": true,
     "Fragment": true,
     "Suspense": true,
     "cache": true,
