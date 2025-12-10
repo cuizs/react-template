@@ -7,22 +7,26 @@ import { defineConfig, globalIgnores } from "eslint/config";
 import eslintConfigPrettier from "eslint-config-prettier/flat";
 
 export default defineConfig([
-  globalIgnores(["dist"]),
-  {
-    files: ["**/*.{ts,tsx}"],
-    extends: [
-      js.configs.recommended,
-      tseslint.configs.recommended,
-      reactHooks.configs.flat.recommended,
-      reactRefresh.configs.vite,
-    ],
-    languageOptions: {
-      ecmaVersion: "latest",
-      globals: globals.browser,
+    globalIgnores(["dist"]),
+    {
+        files: ["**/*.{ts,tsx}"],
+        extends: [
+            js.configs.recommended,
+            tseslint.configs.recommended,
+            reactHooks.configs.flat.recommended,
+            reactRefresh.configs.vite,
+        ],
+        languageOptions: {
+            ecmaVersion: "latest",
+            globals: globals.browser,
+        },
+        rules: {
+            "no-duplicate-imports": ["error", { includeExports: true }],
+            "arrow-body-style": ["warn", "as-needed"],
+            camelcase: ["error", { ignoreDestructuring: true }],
+            "consistent-return": ["error",{treatUndefinedAsUnspecified:false}],
+            eqeqeq: ["error", "always", {"null": "ignore"}]
+        },
     },
-    rules: {
-      indent: "error",
-    },
-  },
-  eslintConfigPrettier,
+    eslintConfigPrettier,
 ]);
