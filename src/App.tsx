@@ -11,6 +11,7 @@ function App() {
     const foo = (cart: FooParams) => {
         if (cart.items && cart.items[0] && cart.items[0].quantity === 0)
             setCount(0);
+        throw "测试Sentry错误❌";
     };
 
     let a = 0;
