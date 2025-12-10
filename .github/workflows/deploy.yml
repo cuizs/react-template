@@ -1,4 +1,4 @@
-# 一个简单的 GitHub Pages 部署工作流
+
 name: Deploy static content to Pages
 
 on:
@@ -29,9 +29,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@9bb5618c5b57e35250f57e3029bd805cb2b9ddac  # v4.1.7
       - name: Set up Node
-        uses: actions/setup-node@v6
+        uses: actions/setup-node@60edb5dd545a775178f5252e99160d1ac5504cd4  # v4.0.0
         with:
           node-version: lts/*
           cache: 'npm'
@@ -40,12 +40,12 @@ jobs:
       - name: Build
         run: npm run build
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@9825fb86ecb6843a6eb33dd767ff5985829d34fe  # v5.0.0
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@023678dfad942c6858339a79e3553ab090c47a2f  # v3.0.1
         with:
           # 上传 dist 文件夹
           path: './dist'
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@8f8dc355ede0b807fa7a432a674d66472c504ae3  # v4.0.5
